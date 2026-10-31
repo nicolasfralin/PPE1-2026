@@ -1,0 +1,16 @@
+echo "Annotations en 2016:" > ./comptes.txt
+cat ann/2016/*.ann | wc -l >> ./comptes.txt
+echo "Annotations en 2017:" >> ./comptes.txt
+cat ann/2017/*.ann | wc -l >> ./comptes.txt
+echo "Annotations en 2018:" >> ./comptes.txt
+cat ann/2018/*.ann | wc -l >> ./comptes.txt
+echo "Annotations en 2016:" > ./locations.txt
+cat ann/2016/*.ann | grep Location | wc -l >> ./locations.txt
+echo "Annotations en 2017:" >> ./locations.txt
+cat ann/2017/*.ann | grep Location | wc -l >> ./locations.txt
+echo "Annotations en 2018:" >> ./locations.txt
+cat ann/2018/*.ann | grep Location | wc -l >> ./locations.txt
+cat ann/2016/*.ann | grep Location | cut -f3 | sort | uniq -c | sort -n | tail -n 15 > classement_2016.txt
+cat ann/2017/*.ann | grep Location | cut -f3 | sort | uniq -c | sort -n | tail -n 15 > classement_2017.txt
+cat ann/2018/*.ann | grep Location | cut -f3 | sort | uniq -c | sort -n | tail -n 15 > classement_2018.txt
+cat ann/*/2018_03_*.ann | grep Location | cut -f3 | sort | uniq -c | sort -n | tail -n 15 > classement_mars.txt
