@@ -1,6 +1,8 @@
 # Journal de bord du projet encadré
 
-## Séance de travail : Configuration SSH et Git
+---
+
+## Séance 1 : Configuration SSH et Git
 - Résolution des problèmes d'authentification SSH avec GitHub (clé Ed25519).
 - Clonage du dépôt distant `PPE1-2026` via le protocole SSH.
 - Initialisation et premier commit du fichier `journal.md` au format Markdown.
@@ -14,7 +16,9 @@
   - *Bonnes pratiques* : Mise en place du fichier `.gitignore` pour filtrer les fichiers superflus.
   - *Jalon* : Pose du tag `gitintro` pour marquer la fin de la séance d'introduction.
 
-## Projet : Pipelines et manipulation de flux sous Unix
+---
+
+## Séance 2 : Projet - Pipelines et manipulation de flux sous Unix
 - **Objectif** : Maîtriser la manipulation des flux de données et l'écriture de pipelines de commandes sous Unix (Bash) à l'aide d'un corpus d'annotations textuelles (`.ann`).
 - **Génération du corpus de test** :
   - Création de la structure de dossiers (`ann/2016`, `ann/2017`, `ann/2018`) via le script `gen_corpus.py`.
@@ -28,6 +32,13 @@
 - **Documentation** :
   - Centralisation de l'intégralité des commandes fonctionnelles dans `Exercices/pipelines.txt`.
 
-# Séance 3
+---
+
+## Séance 3 : Git II - Correction d'erreurs et gestion de l'historique
+- **Exercice 2.a** : Commit de l'erreur (`I AM ERROR`) et ajout de la ligne correctrice.
+- **Exercice 2.b** : Annulation de l'historique public via `git revert` pour supprimer l'erreur proprement.
+- **Exercice 2.c** : Création et publication du tag `git-seance2-defaire`.
+- **Exercice 3** : Gestion des fichiers non suivis avec `rm` (test sur `oups.md`) pour retrouver un espace de travail propre.
+
 ## exercices git
 Cette ligne doit rester après correction
