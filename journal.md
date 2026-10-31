@@ -45,3 +45,4 @@ I AM ERROR
 
 # Séance 3
 ## exercices git
+Cette ligne doit rester après correction
