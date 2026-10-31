@@ -1,3 +1,4 @@
+I AM ERROR
 # Journal de bord du projet encadré
 
 ## Séance de travail : Configuration SSH et Git
