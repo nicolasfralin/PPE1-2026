@@ -41,3 +41,6 @@
   - *Clonage et Synchronisation* : Validation du dépôt local via `git clone` et vérification continue par `git status`[cite: 3, 4].
   - *Bonnes pratiques* : Mise en place du fichier `.gitignore` pour filtrer les fichiers superflus.
   - *Jalon* : Pose du tag `gitintro` pour marquer la fin de la séance d'introduction.
+
+# Séance 3
+## exercices git
