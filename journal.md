@@ -2,7 +2,7 @@
 
 ---
 
-## Séance 1 : Configuration SSH et Git
+## Séance 1 : Configuration SSH et Git I
 - Résolution des problèmes d'authentification SSH avec GitHub (clé Ed25519).
 - Clonage du dépôt distant `PPE1-2026` via le protocole SSH.
 - Initialisation et premier commit du fichier `journal.md` au format Markdown.
