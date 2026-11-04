@@ -35,17 +35,18 @@
 ---
 
 ## Séance 3a : Git II - Correction d'erreurs et gestion de l'historique
-*(Note : Les fichiers `.ann` sur lesquels je m'appuie ci-dessous ont été générés par un script que j'ai demandé à Gemini de créer car je ne sais pas ou trouver les fichiers `.ann` d'origine.)*
+*(Note : Les fichiers `.ann` sur lesquels je me suis appuyé afin de pouvoir compléter les exercices suivants ont été générés par un script que j'ai demandé à Gemini de créer car je ne sais pas où trouver les fichiers `.ann` d'origine.)*
 - **Exercice 2.a** : Commit de l'erreur (`I AM ERROR`) et ajout de la ligne correctrice.
 - **Exercice 2.b** : Annulation de l'historique public via `git revert` pour supprimer l'erreur proprement.
 - **Exercice 2.c** : Création et publication du tag `git-seance2-defaire`.
 - **Exercice 3** : Gestion des fichiers non suivis avec `rm` (test sur `oups.md`) pour retrouver un espace de travail propre.
+- **Exercices git** : 
+  - Ajout de la ligne : `Cette ligne doit rester après correction`.
 
-## exercices git
-Cette ligne doit rester après correction
+---
 
 ## Séance 3b : Scripts Bash et Automatisation
-*(Rappel : Les fichiers `.ann` sur lesquels je m'appuie ci-dessous ont été générés par un script que j'ai demandé à Gemini de créer car je ne sais pas ou trouver les fichiers `.ann` d'origine.)*
+*(Rappel : Les fichiers `.ann` sur lesquels je me suis appuyé afin de pouvoir compléter les exercices suivants ont été générés par un script que j'ai demandé à Gemini de créer car je ne sais pas où trouver les fichiers `.ann` d'origine.)*
 - **Exercice 1** : Écriture du script `comptes.sh` utilisant une boucle `for` pour parcourir les années.
 - **Exercice 2** : Création des scripts paramétrés `compte_par_type.sh`, `compte_par_type_par_an.sh` et `compte_lieux.sh` (avec prise en charge du joker `*`).
 - **Exercice 3** : Ajout de la validation des arguments via des structures conditionnelles `if` et arrêt du script par `exit` en cas d'erreur.
