@@ -51,3 +51,48 @@
 - **Exercice 2** : Création des scripts paramétrés `compte_par_type.sh`, `compte_par_type_par_an.sh` et `compte_lieux.sh` (avec prise en charge du joker `*`).
 - **Exercice 3** : Ajout de la validation des arguments via des structures conditionnelles `if` et arrêt du script par `exit` en cas d'erreur.
 - **Exercice 4** : Vérification de l'utilisation des boucles et documentation de l'analyse de code (dernière diapositive du cours : boucle `while read` et expressions régulières pour la validation des URLs).
+
+---
+
+## Séance 4 : Scripting Bash avancé – Automatisation de l'analyse lexicale Wikipédia
+==> Date du TD : Lundi 9 novembre 2026 (réalisé en autonomie et en continu)
+
+### Ce que j'ai fait
+
+- **De l'exploration manuelle au script automatisé** :
+  - Structuration d'un pipeline complet en ligne de commande sous Linux associant l'aspiration (`wget`), la conversion textuelle (`lynx -dump`), le nettoyage par expression régulière (`sed`, `grep`), et le calcul fréquentiel (`tr`, `awk`, `sort`, `uniq`).
+  - Transformation de cette chaîne de commandes en un script Bash autonome, paramétrable et exécutable (`frequence_wiki.sh`) grâce à l'attribution des droits d'exécution (`chmod +x`).
+
+- **Diagnostic et résolution des biais de structure (Le piège du sommaire)** :
+  - **Mise en évidence du problème** : Un premier découpage naïf basé sur le premier motif `[rR]éférences` trouvé dans le texte conduisait à une troncature prématurée du fichier (bloqué à ~139 lignes) car le mot apparaissait dès la table des matières initiale.
+  - **Solution technique mise en œuvre** : Utilisation conjointe de `grep` et `tail -n 1` (`grep -a -n "Références" | tail -n 1`) pour cibler de manière chirurgicale la *dernière* occurrence du mot, correspondant au véritable chapitre bibliographique en bas de page.
+  - **Dynamisation du script** : Injection de cette logique dans le script Bash pour qu'il s'adapte automatiquement à la longueur variable de n'importe quel article Wikipédia.
+
+- **Gestion des flux binaires et encodages (`grep: binary file matches`)** :
+  - Analyse des alertes émises par `grep` lors du traitement de flux textuels générés par `lynx` (présence de caractères non-ASCII, d'espaces insécables ou de tirets typographiques).
+  - Application systématique de l'option `-a` (`--text`) sur les commandes `grep` pour forcer le traitement en mode texte brut et fluidifier l'exécution sans erreur système.
+
+- **Normalisation et filtrage lexicale rigoureux** :
+  - Suppression automatique des notes de bas de page entre crochets à l'aide de expressions régulières (`sed -E 's/\[[0-9]+\]//g'`).
+  - Filtrage des résidus techniques de mise en page et d'interface hérités de l'aspiration HTML (`file`, `html`, `parser`, `thumbnail`, `button`, `section`, `afficher`, `http`, `https`, etc.).
+  - Écartement des mots-outils grammaticaux (stop-words) polluant les fréquences lexicales brutes.
+
+- **Validation empirique par analyse comparative** :
+  - Test et validation croisée du script sur deux articles aux profils contrastés : **Chat** et **Chien**.
+  - Observation de la pertinence des résultats obtenus : le top 20 met en évidence les spécificités sémantiques de chaque domaine (ex. surreprésentation de la taxinomie *felis / catus / domestique* pour le chat face à l'approche morphologique et sociale *races / canis / loups / homme* pour le chien).
+
+### Pendant le cours
+- **Itérations et debug pas à pas** : Analyse des sorties intermédiaires du terminal (`wc -l`, affichage des tops erronés) pour comprendre les comportements inattendus du processeur textuel.
+- **Apprentissage des permissions Linux** : Manipulation concrète de la commande `chmod +x` pour comprendre la différence entre un simple fichier texte et un script exécutable doté d'un shebang (`#!/bin/bash`).
+- **Gestion des arguments positionnels** : Utilisation de la variable `$1` et de la structure conditionnelle `if [ -z "$1" ]` pour sécuriser l'appel du script avec une URL obligatoire.
+
+### Après le cours
+- **Documentation méthodologique** : Structuration rigoureuse de la chaîne de traitement linguistique (acquisition -> conversion -> nettoyage -> analyse fréquentielle).
+- **Consolidation du projet** : Préparation de l'intégration des scripts et des notes dans l'historique du dépôt Git du projet.
+
+### Solutions que je veux partager
+- **L'extraction de la fin de document par indexation inversée** : La combinaison de `grep -a -n "Références" | tail -n 1` couplée à `cut -d: -f1` est une astuce redoutable en Bash pour automatiser la coupe de documents structurés longs (comme les pages Wikipédia) sans se faire parasiter par les occurrences multiples situées en amont (sommaire).
+- **Le contournement des alertes binaires** : L'ajout de l'option `-a` sur les `grep` d'un pipeline textuel évite que des outils comme `lynx` (qui injectent parfois des caractères spéciaux) ne bloquent ou ne polluent l'affichage standard des résultats.
+
+### Questions à discuter
+- Comment structurer un script Bash pour qu'il puisse lire itérativement un fichier contenant une liste d'URLs (ex. `urls.txt`) et exécuter ce pipeline en boucle sur chaque article, tout en gérant proprement les codes d'erreur HTTP renvoyés par les serveurs ?
