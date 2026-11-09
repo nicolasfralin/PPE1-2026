@@ -99,7 +99,7 @@
 
 ---
 
-## Mini-projet I : Récolte, métadonnées et structuration tabulaire (TSV)
+## Séance 5a : Mini-projet I - Récolte, métadonnées et structuration tabulaire (TSV)
 
 **Objectif :** Récolte de corpus web à partir d'une liste d'URLs, extraction des métadonnées (code HTTP, encodage, comptage de mots) et structuration en TSV.
 
@@ -132,7 +132,7 @@
 
 ---
 
-## Mini-projet II : Transformation du flux TSV en page HTML
+## Séance 5b : Mini-projet II - Transformation du flux TSV en page HTML
 
 - **Objectif :** Remplacer le format tabulaire textuel brut par une page HTML normalisée (`tableau-fr.html`) contenant un en-tête et un corps structurés.
 - **Réalisations :**
