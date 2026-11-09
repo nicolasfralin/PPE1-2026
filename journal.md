@@ -132,4 +132,16 @@
 
 ---
 
+## Mini-projet II : Transformation du flux TSV en page HTML
 
+- **Objectif :** Remplacer le format tabulaire textuel brut par une page HTML normalisée (`tableau-fr.html`) contenant un en-tête et un corps structurés.
+- **Réalisations :**
+  - Adaptation du script `miniprojet/programmes/miniprojet.sh` pour générer dynamiquement du code HTML structuré (`<!DOCTYPE html>`, `<html>`, `<head>`, `<meta charset="UTF-8"/>`, `<body>`, `<table>`, `<tr>`, `<th>`, `<td>`).
+  - Génération du fichier `miniprojet/tableaux/tableau-fr.html`.
+  - Suppression de l'ancien fichier TSV du suivi Git.
+  - Versionnage et publication du tag Git `miniprojet-2` sur GitHub.
+  - Création et envoi du fichier `lien_tag_miniprojet2.txt` pointant vers la release du tag.
+- **Difficultés résolues :**
+  - Correction de la syntaxe et de la fermeture des balises HTML au sein de la boucle séquentielle du script.
+- **Solutions partagées :**
+  - Utilisation de blocs multilignes `cat << EOF` pour injecter proprement la structure statique du document HTML tout en y imbriquant l'itération dynamique des données.
