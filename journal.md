@@ -104,8 +104,9 @@
 **Objectif :** Récolte de corpus web à partir d'une liste d'URLs, extraction des métadonnées (code HTTP, encodage, comptage de mots) et structuration en TSV.
 
 ### Ce que j'ai fait
+- **Constitution du corpus :** Intégration et alignement sur la liste officielle de 10 URLs du cours centrée sur la thématique du « robot » (avec correction du protocole pour l'indexation).
 - **Mise en place de l'automatisation de la collecte :**
-  - Écriture d'un script Bash (`miniprojet/programmes/miniprojet.sh`) gérant la lecture d'un fichier d'URLs (`urls/fr.txt`) passé en argument.
+  - Écriture d'un script Bash (`miniprojet/programmes/miniprojet.sh`) gérant la lecture du fichier d'URLs (`miniprojet/urls/fr.txt`) passé en argument.
   - Intégration d'une validation des arguments positionnels (`[ -z "$1" ]`) pour interrompre immédiatement le script (`exit 1`) si le fichier en entrée est manquant.
   - Utilisation d'une boucle `while read -r line` sécurisée.
 - **Extraction des métadonnées de collecte :**
@@ -113,7 +114,7 @@
   - Récupération de l'encodage des pages.
   - Utilisation de `lynx -dump` combiné à `wc -w` pour le comptage textuel des pages valides.
   - Structuration de la sortie sous la forme d'un flux tabulaire textuel rigoureux (séparation par des tabulations), consigné dans le dossier `miniprojet/tableaux/tableau-fr.tsv`.
-- **Gestion et versionnement du projet :**
+- **Gestion et versionnage du projet :**
   - Respect de l'arborescence attendue du dépôt (`miniprojet/programmes/`, `miniprojet/urls/`, `miniprojet/tableaux/`).
   - Création et publication sur GitHub du tag `miniprojet-1` pour valider et figer cette première étape de récolte.
 - **Suivi en autonomie de l'énoncé du PDF :**
@@ -132,7 +133,7 @@
 
 ---
 
-## Séance 5b : Mini-projet II - Transformation du flux TSV en page HTML
+## Séance 5b : Mini-projet II - Transformation du flux TSV en page HTML structurée et validée
 
 - **Objectif :** Remplacer le format tabulaire textuel brut par une page HTML normalisée (`tableau-fr.html`) contenant un en-tête et un corps structurés.
 - **Réalisations :**
