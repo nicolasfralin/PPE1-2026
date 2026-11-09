@@ -96,3 +96,40 @@
 
 ### Questions à discuter
 - Comment structurer un script Bash pour qu'il puisse lire itérativement un fichier contenant une liste d'URLs (ex. `urls.txt`) et exécuter ce pipeline en boucle sur chaque article, tout en gérant proprement les codes d'erreur HTTP renvoyés par les serveurs ?
+
+---
+
+## Mini-projet I : Récolte, métadonnées et structuration tabulaire (TSV)
+
+**Objectif :** Récolte de corpus web à partir d'une liste d'URLs, extraction des métadonnées (code HTTP, encodage, comptage de mots) et structuration en TSV.
+
+### Ce que j'ai fait
+- **Mise en place de l'automatisation de la collecte :**
+  - Écriture d'un script Bash (`miniprojet/programmes/miniprojet.sh`) gérant la lecture d'un fichier d'URLs (`urls/fr.txt`) passé en argument.
+  - Intégration d'une validation des arguments positionnels (`[ -z "$1" ]`) pour interrompre immédiatement le script (`exit 1`) si le fichier en entrée est manquant.
+  - Utilisation d'une boucle `while read -r line` sécurisée.
+- **Extraction des métadonnées de collecte :**
+  - Utilisation de `curl` pour le téléchargement et la récupération dynamique des codes de statut HTTP (`200`).
+  - Récupération de l'encodage des pages.
+  - Utilisation de `lynx -dump` combiné à `wc -w` pour le comptage textuel des pages valides.
+  - Structuration de la sortie sous la forme d'un flux tabulaire textuel rigoureux (séparation par des tabulations), consigné dans le dossier `miniprojet/tableaux/tableau-fr.tsv`.
+- **Gestion et versionnement du projet :**
+  - Respect de l'arborescence attendue du dépôt (`miniprojet/programmes/`, `miniprojet/urls/`, `miniprojet/tableaux/`).
+  - Création et publication sur GitHub du tag `miniprojet-1` pour valider et figer cette première étape de récolte.
+- **Suivi en autonomie de l'énoncé du PDF :**
+  - Réalisation pas à pas des exercices de récolte et de structuration des flux textuels en suivant les consignes de l'énoncé.
+
+### Difficultés résolues
+- Gestion des chemins relatifs lors de l'appel du script depuis la racine du dépôt et vérification de la présence des dossiers cibles.
+
+### Compléments et tâches supplémentaires
+- Approfondissement de la robustesse du script en anticipant les erreurs de liaison réseau et en structurant rigoureusement le formatage tabulaire brut pour faciliter la transition future vers des formats web.
+- Amorce de la sélection du mot polysémique à étudier pour le projet de groupe en s'appuyant sur les heuristiques conseillées.
+
+### Solutions que l'on veut partager
+- L'utilisation systématique de l'option `-r` dans la boucle `while read` pour éviter que les caractères spéciaux ou les antislashs présents dans les URLs ne perturbent la lecture de ligne.
+- Le couplage d'un compteur de lignes à la volée avec l'affichage tabulaire pour garder une traçabilité précise de chaque URL analysée.
+
+---
+
+
