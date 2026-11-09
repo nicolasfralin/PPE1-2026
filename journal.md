@@ -55,7 +55,7 @@
 ---
 
 ## Séance 4 : Scripting Bash avancé – Automatisation de l'analyse lexicale Wikipédia
-==> Date du TD : Lundi 9 novembre 2026 (réalisé en autonomie et en continu)
+==> Date du TD : Lundi 9 novembre 2026 (réalisé en autonomie et en continu à distance)
 
 ### Ce que j'ai fait
 
@@ -100,6 +100,7 @@
 ---
 
 ## Séance 5a : Mini-projet I - Récolte, métadonnées et structuration tabulaire (TSV)
+==> Date du TD : Lundi 09 novembre 2026 (réalisé en autonomie et en continu à distance)
 
 **Objectif :** Récolte de corpus web à partir d'une liste d'URLs, extraction des métadonnées (code HTTP, encodage, comptage de mots) et structuration en TSV.
 
@@ -134,6 +135,7 @@
 ---
 
 ## Séance 5b : Mini-projet II - Transformation du flux TSV en page HTML structurée et validée
+==> Date du TD : Mardi 10 novembre 2026 (réalisé en autonomie et en continu à distance)
 
 - **Objectif :** Remplacer le format tabulaire textuel brut par une page HTML normalisée (`tableau-fr.html`) contenant un en-tête et un corps structurés.
 - **Réalisations :**
