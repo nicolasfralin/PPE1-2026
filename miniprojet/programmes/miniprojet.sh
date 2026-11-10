@@ -57,6 +57,9 @@ while read -r url; do
     echo "        </tr>" >> "$FICHIER_HTML"
 
     COMPTEUR=$((COMPTEUR + 1))
+    
+    # Pause d'une seconde pour respecter le serveur (rate limiting)
+    sleep 1
 done < "$FICHIER_URLS"
 
 # 3. Clôture de la structure HTML

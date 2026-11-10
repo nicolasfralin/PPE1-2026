@@ -145,14 +145,27 @@
 ## Séance 5b : Mini-projet II - Transformation du flux TSV en page HTML structurée et validée
 ==> Date du TD : Mardi 10 novembre 2026 (réalisé en distanciel et en autonomie)
 
-- **Objectif :** Remplacer le format tabulaire textuel brut par une page HTML normalisée (`tableau-fr.html`) contenant un en-tête et un corps structurés.
-- **Réalisations :**
+**Objectif :** Remplacer le format tabulaire textuel brut par une page HTML normalisée (`tableau-fr.html`) contenant un en-tête et un corps structurés, tout en garantissant la robustesse des requêtes face au serveur.
+
+### Ce que j'ai fait
+- **Refonte de la génération des données :**
   - Adaptation du script `miniprojet/programmes/miniprojet.sh` pour générer dynamiquement du code HTML structuré (`<!DOCTYPE html>`, `<html>`, `<head>`, `<meta charset="UTF-8"/>`, `<body>`, `<table>`, `<tr>`, `<th>`, `<td>`).
-  - Génération du fichier `miniprojet/tableaux/tableau-fr.html`.
-  - Suppression de l'ancien fichier TSV du suivi Git.
-  - Versionnage et publication du tag Git `miniprojet-2` sur GitHub.
-  - Création et envoi du fichier `lien_tag_miniprojet2.txt` pointant vers la release du tag.
-- **Difficultés résolues :**
-  - Correction de la syntaxe et de la fermeture des balises HTML au sein de la boucle séquentielle du script.
-- **Solutions partagées :**
-  - Utilisation de blocs multilignes `cat << EOF` pour injecter proprement la structure statique du document HTML tout en y imbriquant l'itération dynamique des données.
+  - Intégration des liens hypertextes cliquables directement dans les cellules du tableau (`<a href="URL">URL</a>`).
+- **Amélioration de la robustesse réseau :**
+  - Diagnostic initial des requêtes successives ayant révélé des erreurs de type HTTP 429 (*Too Many Requests*) sur les dernières URLs en raison d'un rythme de requêtage trop élevé.
+  - Implantation d'une temporisation (`sleep 1`) à la fin de chaque itération de la boucle de lecture pour espacer les appels et éviter le blocage par les serveurs (notamment Wikipédia).
+- **Génération et nettoyage :**
+  - Exécution réussie du script depuis la racine du dépôt pour générer le fichier final `miniprojet/tableaux/tableau-fr.html`.
+  - Suppression définitive de l'ancien fichier TSV du suivi Git.
+- **Gestion et versionnage du projet :**
+  - Versionnage de cette étape et publication du tag Git `miniprojet-2` sur GitHub.
+  - Création du fichier de liaison `lien_tag_miniprojet2.txt` pointant vers la release du tag sur le dépôt distant.
+
+### Difficultés résolues
+- **Erreurs de chemins relatifs :** Résolution des erreurs de type `No such file or directory` lors de l'exécution du script, corrigées en positionnant correctement l'exécution à la racine du dépôt (`PPE1-2026/`).
+- **Surcharge de requêtes (*Rate Limiting*) :** Correction des codes HTTP 429 et 502 rencontrés en série par l'ajout d'une pause temporelle d'une seconde entre chaque itération de la boucle `while`.
+- **Gestion des balises HTML :** Correction de la syntaxe et de la structuration multilignes via l'utilisation de blocs `cat << EOF` pour l'en-tête et la clôture du document, combinés à des incrémentations dynamiques pour les lignes du tableau.
+
+### Solutions que l'on veut partager
+- L'intérêt majeur d'insérer un délai (`sleep`) lors du web-scraping séquentiel en Bash pour respecter les politiques des serveurs distants et s'assurer d'obtenir un code HTTP 200 stable sur l'ensemble du corpus.
+- L'utilisation de variables dynamiques au sein des balises HTML pour injecter proprement le compteur de lignes, les codes HTTP, l'encodage détecté et le nombre de mots calculé via `lynx` et `wc -w`.
