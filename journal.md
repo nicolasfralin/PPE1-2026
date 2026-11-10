@@ -3,6 +3,8 @@
 ---
 
 ## Séance 1 : Configuration SSH et Git I
+==> Date du TD : samedi 31 octobree 2026 (réalisé en distanciel et en autonomie)
+
 - Résolution des problèmes d'authentification SSH avec GitHub (clé Ed25519).
 - Clonage du dépôt distant `PPE1-2026` via le protocole SSH.
 - Initialisation et premier commit du fichier `journal.md` au format Markdown.
@@ -19,6 +21,8 @@
 ---
 
 ## Séance 2 : Projet - Pipelines et manipulation de flux sous Unix
+==> Date du TD : mardi 3 novembre 2026 (réalisé en distanciel et en autonomie)
+
 - **Objectif** : Maîtriser la manipulation des flux de données et l'écriture de pipelines de commandes sous Unix (Bash) à l'aide d'un corpus d'annotations textuelles (`.ann`).
 - **Génération du corpus de test** :
   - Création de la structure de dossiers (`ann/2016`, `ann/2017`, `ann/2018`) via le script `gen_corpus.py`.
@@ -35,6 +39,8 @@
 ---
 
 ## Séance 3a : Git II - Correction d'erreurs et gestion de l'historique
+==> Date du TD : Samedi 7 novembre 2026 (réalisé en distanciel et en autonomie)
+
 *(Note : Corpus de données .ann généré par script, faute de sources originales trouvables.)*
 - **Exercice 2.a** : Commit de l'erreur (`I AM ERROR`) et ajout de la ligne correctrice.
 - **Exercice 2.b** : Annulation de l'historique public via `git revert` pour supprimer l'erreur proprement.
@@ -46,6 +52,8 @@
 ---
 
 ## Séance 3b : Scripts Bash et Automatisation
+==> Date du TD : Samedi 7 novembre 2026 (réalisé en distanciel et en autonomie)
+
 *(Rappel : Corpus de fichiers .ann généré par script, faute de sources originales trouvables.)*
 - **Exercice 1** : Écriture du script `comptes.sh` utilisant une boucle `for` pour parcourir les années.
 - **Exercice 2** : Création des scripts paramétrés `compte_par_type.sh`, `compte_par_type_par_an.sh` et `compte_lieux.sh` (avec prise en charge du joker `*`).
@@ -55,7 +63,7 @@
 ---
 
 ## Séance 4 : Scripting Bash avancé – Automatisation de l'analyse lexicale Wikipédia
-==> Date du TD : Lundi 9 novembre 2026 (réalisé en autonomie et en continu à distance)
+==> Date du TD : Lundi 9 novembre 2026 (réalisé en distanciel et en autonomie)
 
 ### Ce que j'ai fait
 
@@ -100,7 +108,7 @@
 ---
 
 ## Séance 5a : Mini-projet I - Récolte, métadonnées et structuration tabulaire (TSV)
-==> Date du TD : Lundi 09 novembre 2026 (réalisé en autonomie et en continu à distance)
+==> Date du TD : Lundi 09 novembre 2026 (réalisé en distanciel et en autonomie)
 
 **Objectif :** Récolte de corpus web à partir d'une liste d'URLs, extraction des métadonnées (code HTTP, encodage, comptage de mots) et structuration en TSV.
 
@@ -135,7 +143,7 @@
 ---
 
 ## Séance 5b : Mini-projet II - Transformation du flux TSV en page HTML structurée et validée
-==> Date du TD : Mardi 10 novembre 2026 (réalisé en autonomie et en continu à distance)
+==> Date du TD : Mardi 10 novembre 2026 (réalisé en distanciel et en autonomie)
 
 - **Objectif :** Remplacer le format tabulaire textuel brut par une page HTML normalisée (`tableau-fr.html`) contenant un en-tête et un corps structurés.
 - **Réalisations :**
