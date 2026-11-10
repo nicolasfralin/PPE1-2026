@@ -137,7 +137,7 @@ Journal de bord du projet encadré
 - Approfondissement de la robustesse du script en anticipant les erreurs de liaison réseau et en structurant rigoureusement le formatage tabulaire brut pour faciliter la transition future vers des formats web.
 - Amorce de la sélection du mot polysémique à étudier pour le projet de groupe en s'appuyant sur les heuristiques conseillées.
 
-### Solutions que l'on veut partager
+### Solutions que je veux partager
 - L'utilisation systématique de l'option `-r` dans la boucle `while read` pour éviter que les caractères spéciaux ou les antislashs présents dans les URLs ne perturbent la lecture de ligne.
 - Le couplage d'un compteur de lignes à la volée avec l'affichage tabulaire pour garder une traçabilité précise de chaque URL analysée.
 
@@ -165,6 +165,6 @@ Journal de bord du projet encadré
 - Surcharge de requêtes (*Rate Limiting*) : Correction des codes HTTP 429 et 502 rencontrés en série par l'ajout d'une pause temporelle d'une seconde entre chaque itération de la boucle `while`.
 - Gestion des balises HTML : Correction de la syntaxe et de la structuration multilignes via l'utilisation de blocs `cat << EOF` pour l'en-tête et la clôture du document, combinés à des incrémentations dynamiques pour les lignes du tableau.
 
-### Solutions que l'on veut partager
+### Solutions que je veux partager
 - L'intérêt majeur d'insérer un délai (`sleep`) lors du web-scraping séquentiel en Bash pour respecter les politiques des serveurs distants et s'assurer d'obtenir un code HTTP 200 stable sur l'ensemble du corpus.
 - L'utilisation de variables dynamiques au sein des balises HTML pour injecter proprement le compteur de lignes, les codes HTTP, l'encodage détecté et le nombre de mots calculé via `lynx` et `wc -w`.
