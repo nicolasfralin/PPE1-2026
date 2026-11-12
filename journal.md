@@ -4,18 +4,18 @@ Journal de bord du projet encadré
 ==> Date du TD : samedi 31 octobre 2026 (réalisé en distanciel et en autonomie)
 
 ### Ce que j'ai fait
-* **Authentification initiale :**
+- **Authentification initiale :**
   - Résolution des problèmes d'authentification SSH avec GitHub (clé `Ed25519`).
-* **Clonage du dépôt :**
+- **Clonage du dépôt :**
   - Clonage du dépôt distant `PPE1-2026` via le protocole SSH.
-* **Initialisation du projet :**
+- **Initialisation du projet :**
   - Initialisation et premier commit du fichier `journal.md` au format Markdown.
 
 ### Suivi détaillé des manipulations et difficultés surmontées
-* **Authentification et Sécurité SSH :**
+- **Authentification et Sécurité SSH :**
   - **Problème rencontré :** Utilisation obligatoire du protocole SSH pour les interactions avec GitHub suite à la sécurisation des dépôts.
   - **Solution :** Configuration d'une clé SSH `Ed25519` depuis le poste Linux pour permettre les publications sans erreur.
-* **Gestion du dépôt et versionnement :**
+- **Gestion du dépôt et versionnement :**
   - **Clonage et Synchronisation :** Validation du dépôt local via `git clone` et vérification continue par `git status`.
   - **Bonnes pratiques :** Mise en place du fichier `.gitignore` pour filtrer les fichiers superflus.
   - **Jalon :** Pose du tag `gitintro` pour marquer la fin de la séance d'introduction.
@@ -24,18 +24,18 @@ Journal de bord du projet encadré
 ==> Date du TD : mardi 3 novembre 2026 (réalisé en distanciel et en autonomie)
 
 ### Ce que j'ai fait
-* **Objectif :**
+- **Objectif :**
   - Maîtriser la manipulation des flux de données et l'écriture de pipelines de commandes sous Unix (Bash) à l'aide d'un corpus d'annotations textuelles (`.ann`).
-* **Génération du corpus de test :**
+- **Génération du corpus de test :**
   - Création de la structure de dossiers (`ann/2016`, `ann/2017`, `ann/2018`) via le script `gen_corpus.py`.
-* **Comptage global :**
+- **Comptage global :**
   - Génération du fichier `Exercices/comptes.txt` pour comptabiliser les lignes par année.
-* **Filtrage thématique :**
+- **Filtrage thématique :**
   - Extraction des entités de type Location et production du fichier `Exercices/locations.txt`.
-* **Classements statistiques :**
+- **Classements statistiques :**
   - Utilisation de pipelines avancés (`cat`, `grep`, `cut`, `sort`, `uniq -c`, `tail`) pour extraire le top 15 des lieux par an et pour le mois de mars.
   - Production des fichiers `classement_2016.txt`, `classement_2017.txt`, `classement_2018.txt` et `classement_mars.txt`.
-* **Documentation :**
+- **Documentation :**
   - Centralisation de l'intégralité des commandes fonctionnelles dans `Exercices/pipelines.txt`.
 
 ## Séance 3a : Git II - Correction d'erreurs et gestion de l'historique
@@ -44,15 +44,15 @@ Journal de bord du projet encadré
 *(Note : Corpus de données `.ann` généré par script, faute de sources originales trouvables.)*
 
 ### Ce que j'ai fait
-* **Exercice 2.a — Gestion des erreurs de commit :**
+- **Exercice 2.a — Gestion des erreurs de commit :**
   - Commit de l'erreur (`I AM ERROR`) et ajout de la ligne correctrice.
-* **Exercice 2.b — Annulation d'historique :**
+- **Exercice 2.b — Annulation d'historique :**
   - Annulation de l'historique public via `git revert` pour supprimer l'erreur proprement.
-* **Exercice 2.c — Étiquetage et publication :**
+- **Exercice 2.c — Étiquetage et publication :**
   - Création et publication du tag `git-seance2-defaire`.
-* **Exercice 3 — Nettoyage de l'espace de travail :**
+- **Exercice 3 — Nettoyage de l'espace de travail :**
   - Gestion des fichiers non suivis avec `rm` (test sur `oups.md`) pour retrouver un espace de travail propre.
-* **Exercices git — Ajustements textuels :**
+- **Exercices git — Ajustements textuels :**
   - Ajout de la ligne : « Cette ligne doit rester après correction. »
 
 ## Séance 3b : Scripts Bash et Automatisation
@@ -61,13 +61,13 @@ Journal de bord du projet encadré
 *(Rappel : Corpus de fichiers `.ann` généré par script, faute de sources originales trouvables.)*
 
 ### Ce que j'ai fait
-* **Exercice 1 — Automatisation par boucle for :**
+- **Exercice 1 — Automatisation par boucle for :**
   - Écriture du script `comptes.sh` utilisant une boucle `for` pour parcourir les années.
-* **Exercice 2 — Scripts paramétrés :**
+- **Exercice 2 — Scripts paramétrés :**
   - Création des scripts paramétrés `compte_par_type.sh`, `compte_par_type_par_an.sh` et `compte_lieux.sh` (avec prise en charge du joker `*`).
-* **Exercice 3 — Validation et gestion des erreurs :**
+- **Exercice 3 — Validation et gestion des erreurs :**
   - Ajout de la validation des arguments via des structures conditionnelles `if` et arrêt du script par `exit` en cas d'erreur.
-* **Exercice 4 — Analyse de code et boucles avancées :**
+- **Exercice 4 — Analyse de code et boucles avancées :**
   - Vérification de l'utilisation des boucles et documentation de l'analyse de code (dernière diapositive du cours : boucle `while read` et expressions régulières pour la validation des URLs).
 
 ## Séance 4 : Scripting Bash avancé – Automatisation de l'analyse lexicale Wikipédia
@@ -157,8 +157,8 @@ Journal de bord du projet encadré
   - Exécution réussie du script depuis la racine du dépôt pour générer le fichier final `miniprojet/tableaux/tableau-fr.html`.
   - Suppression définitive de l'ancien fichier TSV du suivi Git.
 - Gestion et versionnage du projet :
-  - Versionnage de cette étape et publication du tag Git `miniprojet-2` sur GitHub.
-  - Création du fichier de liaison `lien_tag_miniprojet2.txt` pointant vers la release du tag sur le dépôt distant.
+  - Versionnage de cette étape et publication du tag Git `miniprojet-1` sur GitHub.
+  - Création du fichier de liaison `lien_tag_miniprojet1.txt` pointant vers la release du tag sur le dépôt distant.
 
 ### Difficultés résolues
 - Erreurs de chemins relatifs : Résolution des erreurs de type `No such file or directory` lors de l'exécution du script, corrigées en positionnant correctement l'exécution à la racine du dépôt (`PPE1-2026/`).
