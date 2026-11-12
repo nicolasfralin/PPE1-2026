@@ -153,16 +153,20 @@ Journal de bord du projet encadré
 - Amélioration de la robustesse réseau :
   - Diagnostic initial des requêtes successives ayant révélé des erreurs de type HTTP 429 (*Too Many Requests*) sur les dernières URLs en raison d'un rythme de requêtage trop élevé.
   - Implantation d'une temporisation (`sleep 1`) à la fin de chaque itération de la boucle de lecture pour espacer les appels et éviter le blocage par les serveurs (notamment Wikipédia).
+- Correction des URLs et encodage :
+  - Résolution d'une erreur HTTP 404 sur l'article de Léonard de Vinci en remplaçant l'URL brute par sa version encodée en pourcentage (`https://fr.wikipedia.org/wiki/Robot_(L%C3%A9onard_de_Vinci)`) dans `miniprojet/urls/fr.txt`.
 - Génération et nettoyage :
-  - Exécution réussie du script depuis la racine du dépôt pour générer le fichier final `miniprojet/tableaux/tableau-fr.html`.
+  - Exécution réussie du script depuis la racine du dépôt pour générer le fichier final `miniprojet/tableaux/tableau-fr.html` avec des codes HTTP stables à 200.
   - Suppression définitive de l'ancien fichier TSV du suivi Git.
 - Gestion et versionnage du projet :
-  - Versionnage de cette étape et publication du tag Git `miniprojet-1` sur GitHub.
-  - Création du fichier de liaison `lien_tag_miniprojet1.txt` pointant vers la release du tag sur le dépôt distant.
+  - Validation des modifications et commit sur la branche `main`.
+  - Versionnage de cette étape et publication du tag Git `miniprojet-2` sur GitHub.
+  - Création du fichier de liaison `lien_tag_miniprojet2.txt` pointant vers la release du tag sur le dépôt distant.
 
 ### Difficultés résolues
 - Erreurs de chemins relatifs : Résolution des erreurs de type `No such file or directory` lors de l'exécution du script, corrigées en positionnant correctement l'exécution à la racine du dépôt (`PPE1-2026/`).
 - Surcharge de requêtes (*Rate Limiting*) : Correction des codes HTTP 429 et 502 rencontrés en série par l'ajout d'une pause temporelle d'une seconde entre chaque itération de la boucle `while`.
+- Gestion des caractères accentués dans les URL : Correction d'une erreur 404 sur Wikipédia via l'utilisation du *percent-encoding* (`%C3%A9`) pour les caractères spéciaux.
 - Gestion des balises HTML : Correction de la syntaxe et de la structuration multilignes via l'utilisation de blocs `cat << EOF` pour l'en-tête et la clôture du document, combinés à des incrémentations dynamiques pour les lignes du tableau.
 
 ### Solutions que je veux partager
